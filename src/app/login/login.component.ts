@@ -7,9 +7,10 @@ import { ApiService } from '../apiService/apiService';
 import { UsuarioFilter } from '../usuario/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, Validators,FormControl  } from '@angular/forms';
+import {FormGroup,Validators,FormControl} from '@angular/forms';
 import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+import { BaseComponentFormComponent } from '../shared/base-component-form/base-component-form.component';
  apiService : ApiService
 @Component({
   selector:'login-app',
@@ -18,9 +19,7 @@ import { CommonModule } from '@angular/common';
   templateUrl:'./login.component.html'
 
 })
-export class LoginComponent{
-  constructor(public apiService : ApiService,public  http : HttpClient, public formBuilder: FormBuilder){
-  }
+export class LoginComponent extends BaseComponentFormComponent{
 
   private _snackBar = inject(MatSnackBar);
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
@@ -40,6 +39,7 @@ export class LoginComponent{
       Validators.minLength(6)
     ])
   });
+
   }
 
 
@@ -50,6 +50,8 @@ getClassCssbtnLogar():string{
     let usuarioFilter: UsuarioFilter = new UsuarioFilter()
     usuarioFilter.email = this.formulario.value['email']
     usuarioFilter.senha = this.formulario.value['senha']
+
+    this.setCookie()
   }
 
 }
