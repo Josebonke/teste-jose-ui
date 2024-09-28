@@ -13,18 +13,18 @@
         <span>
           <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Digite Seu Email" id="email" formControlName="email">
+            <input matInput placeholder="Digite Seu Email" id="email" placeholder="Exemplo joão@exemplo.com.br" required formControlName="email">
+            <mat-error>Digite um e-mail válido</mat-error>
           </mat-form-field>
         </span>
 
         <span>
-         <mat-form-field class="full-width">
-           <mat-label>Senha</mat-label>
-           <input  type="password" matInput placeholder="Senha" id="senha" formControlName="senha">
-         </mat-form-field>
-       </span>
-
-     </form>
+          <mat-form-field class="full-width">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput placeholder="Senha" id="senha" formControlName="senha">
+          </mat-form-field>
+        </span>
+      </form>
     </div>
 
     <span class="btn-group">
