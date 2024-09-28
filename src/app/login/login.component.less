@@ -53,6 +53,9 @@ login-app{
           h3{
             color: rgb(81, 81, 243);;
           }
+          .full-width{
+            width: 100%;
+          }
 
         }
         .btn-group{
@@ -62,13 +65,22 @@ login-app{
           grid-column: 1/span 5;
           grid-row: 5;
           padding: 8px;
-         .button{
+
+          .btn-active{
             background-color: rgb(255, 127, 39);
             font-weight: 300;
             color:white;
-
           }
+
+          .btn-inactive{
+            background-color: rgba(163, 156, 152, 0.808);
+            font-weight: 300;
+            color:white;
+            cursor: block;
+          }
+
         }
+
       }
     }
   }
@@ -124,6 +136,10 @@ login-app{
           padding:0 8px ;
           grid-column: 1/span 5;
           grid-row: 3/span 2;
+
+          .full-width{
+            width: 100%;
+          }
         }
 
         .btn-group{
@@ -135,11 +151,17 @@ login-app{
           padding: 8px;
           cursor: pointer;
 
-          .button{
+          .btn-active{
             background-color: rgb(255, 127, 39);
             font-weight: 300;
             color:white;
+          }
 
+          .btn-inactive{
+            background-color: rgba(163, 156, 152, 0.808);
+            font-weight: 300;
+            color:white;
+            cursor: block;
           }
         }
       }
@@ -203,6 +225,10 @@ login-app{
             color: rgb(81, 81, 243);;
           }
 
+          .full-width{
+            width: 100%;
+          }
+
         }
 
         .btn-group{
@@ -214,10 +240,17 @@ login-app{
           padding: 8px;
           cursor: pointer;
 
-          .button{
-           font-weight: 300;
-           color:white;
-           background-color: rgb(255, 127, 39);
+          .btn-active{
+            background-color: rgb(255, 127, 39);
+            font-weight: 300;
+            color:white;
+          }
+
+          .btn-inactive{
+            background-color: rgba(163, 156, 152, 0.808);
+            font-weight: 300;
+            color:white;
+            cursor: block;
           }
         }
       }
@@ -271,10 +304,17 @@ login-app{
           cursor: pointer;
           color: white;
           font-weight: 600;
-         .button{
-           background-color: rgb(255, 127, 39);
-           font-weight: 300;
-           color:white;
+          .btn-active{
+            background-color: rgb(255, 127, 39);
+            font-weight: 300;
+            color:white;
+          }
+
+          .btn-inactive{
+            background-color: rgba(163, 156, 152, 0.808);
+            font-weight: 300;
+            color:white;
+            cursor: block;
           }
         }
 
@@ -328,10 +368,17 @@ login-app{
         flex-direction: column;
         width: 100%;
         cursor: pointer;
-        .button{
+        .btn-active{
+          background-color: rgb(255, 127, 39);
           font-weight: 300;
           color:white;
-          background-color: #ff7f27
+        }
+
+        .btn-inactive{
+          background-color: rgba(163, 156, 152, 0.808);
+          font-weight: 300;
+          color:white;
+          cursor: block;
         }
       }
     }

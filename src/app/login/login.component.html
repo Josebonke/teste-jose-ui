@@ -28,7 +28,7 @@
     </div>
 
     <span class="btn-group">
-      <button id="btn-logar" (click)="logar()" class="button"mat-raised-button>
+      <button id="btn-logar" (click)="logar()"  [ngClass]="getClassCssbtnLogar()" mat-raised-button [disabled]="formulario.invalid">
         <i class="pi pi-lock-open " style="color: rgb(255, 255, 255);"></i>
         Logar
       </button>

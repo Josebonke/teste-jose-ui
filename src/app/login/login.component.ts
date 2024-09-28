@@ -9,12 +9,12 @@ import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators,FormControl  } from '@angular/forms';
 import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
-
+import { CommonModule } from '@angular/common';
  apiService : ApiService
 @Component({
   selector:'login-app',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule,MatButtonModule,MatDividerModule, ReactiveFormsModule],
+  imports: [MatFormFieldModule, MatInputModule,MatButtonModule,MatDividerModule, ReactiveFormsModule,CommonModule],
   templateUrl:'./login.component.html'
 
 })
@@ -40,36 +40,16 @@ export class LoginComponent{
       Validators.minLength(6)
     ])
   });
-
-
   }
 
 
-
-
+getClassCssbtnLogar():string{
+  return  this.formulario.invalid ? "btn-inactive"  : "btn-active"
+}
   logar(){
     let usuarioFilter: UsuarioFilter = new UsuarioFilter()
     usuarioFilter.email = this.formulario.value['email']
     usuarioFilter.senha = this.formulario.value['senha']
-
-    if(!usuarioFilter.email.includes("@")){
-      // const snackBarRef = this._snackBar.open(`'Digite Um e-mail Válido ${usuarioFilter.email}` , '', {
-      //   duration: 2000,
-      //   horizontalPosition: 'center',
-      //   verticalPosition: 'top',
-      // });
-
-
-      // setTimeout(() => {
-      //   snackBarRef.dismiss();
-      // }, 2000);
-    }
-
-
-
-
-
-
   }
 
 }
