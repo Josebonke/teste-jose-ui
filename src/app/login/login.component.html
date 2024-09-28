@@ -1,27 +1,30 @@
 <div class="main">
   <header class="title">
-    UserForge
-    <i class="pi pi-prime" style="font-size: 7rem; color: rgb(39, 39, 94);"></i>
+    <i class="pi pi-user" style="font-size: 7rem; color: rgb(226, 226, 230);"></i>
   </header>
   <div class="form">
     <h1 class="form-title">Login</h1>
+
     <div  class="inputs-group">
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="full-width">
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="Ex. joao@examplo.com.br">
+        <input type="email" id="input-email" matInput placeholder="Ex. joao@examplo.com.br">
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="full-width">
         <mat-label>Senha</mat-label>
-        <input type="password" matInput placeholder="Digite a senha">
+        <input id="input-senha" type="password" matInput placeholder="Digite a senha">
       </mat-form-field>
+    </div>
 
-      <button color="primary"mat-raised-button>
+    <span class="btn-group">
+      <button id="btn-logar" class="button"mat-raised-button>
         <i class="pi pi-lock-open " style="color: rgb(255, 255, 255);"></i>
         Logar
       </button>
+    </span>
 
-    </div>
+  </div>
 
 </div>
