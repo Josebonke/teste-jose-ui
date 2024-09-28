@@ -9,7 +9,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 })
 
 export class ApiService {
-  apiUrl: string = 'https://localhost:7150/'
+  apiUrl: string = 'https://localhost:7232'
 
 
   constructor(public http: HttpClient) {}
@@ -23,7 +23,7 @@ export class ApiService {
 
   Logar( parameter: UsuarioFilter = new UsuarioFilter()): Promise<UsuarioGRID[]> {
 
-    const url = `${this.apiUrl}/logar`;
+    const url = `${this.apiUrl}/Login`;
     let params = new HttpParams();
 
     Object.entries(parameter).forEach(([key, value]) => {
@@ -33,24 +33,17 @@ export class ApiService {
 
     });
 
-
-    const headers = new HttpHeaders({
-      'Cache-Control': 'no-cache',
-      'Pragma': 'no-cache',
-      'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT',
-      'Custom-Header': 'Value'
-    });
-
     return new Promise<UsuarioGRID[]>((resolve, reject) => {
-      this.http.get<UsuarioGRID[]>(url, { params, headers })
-        .subscribe({
-          next: (data: UsuarioGRID[]) => {
-            resolve(data);
-          },
-          error: (error: any) => {
-            reject(error);
-          }
-        });
-    });
+      const body = { ...params };
+      this.http.post<UsuarioGRID[]>(url, parameter)
+          .subscribe({
+              next: (data: UsuarioGRID[]) => {
+                  resolve(data);
+              },
+              error: (error: any) => {
+                  reject(error);
+              }
+          });
+  });
   }
 }

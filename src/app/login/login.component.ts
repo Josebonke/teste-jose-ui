@@ -50,7 +50,7 @@ getClassCssbtnLogar():string{
     let usuarioFilter: UsuarioFilter = new UsuarioFilter()
     usuarioFilter.email = this.formulario.value['email']
     usuarioFilter.senha = this.formulario.value['senha']
-
+    this.apiService.Logar(usuarioFilter)
     this.setCookie()
   }
 
