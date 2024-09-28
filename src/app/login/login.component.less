@@ -76,6 +76,7 @@ login-app{
     grid-template-columns: auto;
     background: rgb(155, 175, 217);
     background: linear-gradient(90deg, rgb(155, 175, 217) 0%, rgb(16, 55, 132) 100%);
+
     .main{
       display: grid;
       grid-template-rows: 1fr 5fr;
@@ -94,6 +95,7 @@ login-app{
         padding-top:10px ;
         font-weight: 600;
       }
+
       .form{
         display: grid;
         grid-template-columns: repeat(5,1fr);
@@ -102,6 +104,7 @@ login-app{
         grid-column: 1/span 4;
         background-color: rgb(230, 214, 214);
         margin: 10px;
+
         .form-title{
           display: flex;
           grid-row: 1/span 2;
@@ -118,11 +121,8 @@ login-app{
           padding:0 8px ;
           grid-column: 1/span 5;
           grid-row: 3/span 2;
-          h3{
-            color: rgb(81, 81, 243);;
-          }
-
         }
+
         .btn-group{
           display: flex;
           flex-direction: column;
@@ -131,6 +131,7 @@ login-app{
           grid-row: 5;
           padding: 8px;
           cursor: pointer;
+
           .button{
             background: hsla(221, 45%, 73%, 1);
             background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
@@ -146,6 +147,7 @@ login-app{
     grid-template-columns: auto;
     background: rgb(155, 175, 217);
     background: linear-gradient(90deg, rgb(155, 175, 217) 0%, rgb(16, 55, 132) 100%);
+
     .main{
       display: grid;
       grid-template-rows: 1fr 5fr;
@@ -165,6 +167,7 @@ login-app{
         font-weight: 600;
         padding-top: 10px;
       }
+
       .form{
         display: grid;
         grid-template-columns: repeat(5,1fr);
@@ -173,6 +176,7 @@ login-app{
         grid-column: 1/span 4;
         background-color: rgb(230, 214, 214);
         margin: 10px;
+
         .form-title{
           display: flex;
           grid-row: 1/span 2;
@@ -189,11 +193,13 @@ login-app{
           padding:0 8px ;
           grid-column: 1/span 5;
           grid-row: 3/span 2;
+
           h3{
             color: rgb(81, 81, 243);;
           }
 
         }
+
         .btn-group{
           display: flex;
           flex-direction: column;
@@ -202,6 +208,7 @@ login-app{
           grid-row: 5;
           padding: 8px;
           cursor: pointer;
+
           .button{
             background: hsla(221, 45%, 73%, 1);
             background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
@@ -209,14 +216,17 @@ login-app{
         }
       }
     }
+
   }
 
   @media (min-width: 993px) and (max-width: 1200px) {
+
     display: grid;
     grid-template-rows: 100vh;
     grid-template-columns: auto;
     background: rgb(155, 175, 217);
     background: linear-gradient(90deg, rgb(155, 175, 217) 0%, rgb(16, 55, 132) 100%);
+
     .main{
       display: grid;
       grid-template-columns: 3fr 2fr;
@@ -226,9 +236,8 @@ login-app{
         justify-content: center;
         align-items: center;
         grid: column 1;
-
-
       }
+
       .form{
         display: flex;
         justify-content: center;
@@ -236,15 +245,18 @@ login-app{
         grid-column:2;
         background-color: white;
         padding:0 10px;
+
         .full-width{
           width: 100%;
         }
+
         .form-title{
           display: flex;
           justify-content: center;
           align-items: center;
           color: rgb(81, 81, 243);;
         }
+
       }
         .btn-group{
           display: flex;
@@ -258,6 +270,7 @@ login-app{
           }
       }
     }
+
   }
 
   @media (min-width: 1201px) {
@@ -266,6 +279,7 @@ login-app{
     grid-template-columns: auto;
     background: rgb(155, 175, 217);
     background: linear-gradient(90deg, rgb(155, 175, 217) 0%, rgb(16, 55, 132) 100%);
+
     .main{
       display: grid;
       grid-template-columns: 3fr 2fr;
@@ -278,6 +292,7 @@ login-app{
 
 
       }
+
       .form{
         display: flex;
         justify-content: center;
@@ -308,5 +323,6 @@ login-app{
           }
       }
     }
+
   }
 }
