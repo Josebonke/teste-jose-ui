@@ -22,13 +22,12 @@ apiService : ApiService
 })
 export class LoginComponent extends BaseComponentFormComponent{
 
-  private _snackBar = inject(MatSnackBar);
+  _snackBar = inject(MatSnackBar);
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   formulario: FormGroup
   senha : string = ''
   email : string = ""
-
  async ngOnInit() : Promise<void>{
   this.formulario = new FormGroup({
     email: new FormControl(this.email, [
@@ -39,14 +38,13 @@ export class LoginComponent extends BaseComponentFormComponent{
       Validators.required,
       Validators.minLength(6)
     ])
-  });
-
+  })
   }
 
+  getClassCssbtnLogar():string{
+    return  this.formulario.invalid ? "btn-inactive"  : "btn-active"
+  }
 
-getClassCssbtnLogar():string{
-  return  this.formulario.invalid ? "btn-inactive"  : "btn-active"
-}
   logar(){
     let usuarioFilter: UsuarioFilter = new UsuarioFilter()
     usuarioFilter.email = this.formulario.value['email']
@@ -68,13 +66,10 @@ getClassCssbtnLogar():string{
           snackBarRef.dismiss();
         }, 2000);
 
+        this.cookieService.setCookie('error',reject.error,7);
+
 
       }
-    });
-
-
-
-
+    })
   }
-
 }
