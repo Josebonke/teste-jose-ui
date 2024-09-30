@@ -10,9 +10,7 @@ import { FormGroup,Validators,FormControl} from '@angular/forms';
 import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { BaseComponentFormComponent } from '../shared/base-component-form/base-component-form.component';
-import { tap,catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
-import {jwtDecode} from 'jwt-decode';
+
 
 
 
@@ -43,6 +41,7 @@ export class LoginComponent extends BaseComponentFormComponent{
       Validators.minLength(6)
     ])
   })
+  this.cookieService.deleteCookie('jwt')
   }
 
   getClassCssbtnLogar():string{
@@ -54,14 +53,15 @@ export class LoginComponent extends BaseComponentFormComponent{
     usuarioFilter.email = this.formulario.value['email']
     usuarioFilter.senha = this.formulario.value['senha']
 
-    this.apiService.login(usuarioFilter).subscribe({
+    this.apiService.login(usuarioFilter,'Login').subscribe({
       next: (response) => {
-        const token = response;
-        this.cookieService.setCookie('jwtToken', token.token,7 ); // Salva o token no localStorage
-        const decodedToken: any = jwtDecode(token.token);
-        // Pega o nome do usuário (supondo que esteja no campo 'unique_name' ou 'name')
-        const userName = decodedToken.Nome
-        console.log('userName',userName)
+        const token = response
+        if(token)
+        {
+          this.cookieService.setCookie('jwtToken', token.token,7 )
+          this.router.navigate(['/Home'])
+        }
+
       },
       error: (reject) => {
         const snackBarRef = this._snackBar.open(`Erro  ${reject.error}` , '', {
@@ -71,7 +71,7 @@ export class LoginComponent extends BaseComponentFormComponent{
         })
         setTimeout(() => {
           snackBarRef.dismiss();
-        }, 2000);
+        }, 2000)
       }
     })
   }

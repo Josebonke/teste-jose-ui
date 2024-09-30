@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { CookieService } from '../../cookieService/cookie.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router'; // Importando o Router
 @Component({
   selector: 'app-base-component-form',
   standalone: true,
@@ -17,24 +18,9 @@ import { FormBuilder } from '@angular/forms';
 
 })
 export class BaseComponentFormComponent {
+  router = inject(Router); // Injetando o Router
   constructor(public apiService : ApiService,public  http : HttpClient, public formBuilder: FormBuilder,public cookieService: CookieService){
   }
 
-
-  // Criar um cookie
-  setCookie() {
-    this.cookieService.setCookie('username', 'John Doe', 7);  // Duração de 7 dias
-  }
-
-  // Ler o valor de um cookie
-  getCookie() {
-    const username = this.cookieService.getCookie('username');
-    console.log(username);
-  }
-
-  // Apagar um cookie
-  deleteCookie() {
-    this.cookieService.deleteCookie('username');
-  }
 
 }
