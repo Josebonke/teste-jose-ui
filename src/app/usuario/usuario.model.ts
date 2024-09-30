@@ -11,4 +11,5 @@ export class UsuarioGRID{
   email : string = ""
   senha : string = ""
   nome : string = ""
+  token : string = ""
 }

@@ -12,6 +12,10 @@ import { CommonModule } from '@angular/common';
 import { BaseComponentFormComponent } from '../shared/base-component-form/base-component-form.component';
 import { tap,catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import {jwtDecode} from 'jwt-decode';
+
+
+
 apiService : ApiService
 @Component({
   selector:'login-app',
@@ -53,8 +57,11 @@ export class LoginComponent extends BaseComponentFormComponent{
     this.apiService.login(usuarioFilter).subscribe({
       next: (response) => {
         const token = response;
-        this.cookieService.setCookie('jwtToken', '',7 ); // Salva o token no localStorage
-        console.log('Login realizado com sucesso!', token)
+        this.cookieService.setCookie('jwtToken', token.token,7 ); // Salva o token no localStorage
+        const decodedToken: any = jwtDecode(token.token);
+        // Pega o nome do usuário (supondo que esteja no campo 'unique_name' ou 'name')
+        const userName = decodedToken.Nome
+        console.log('userName',userName)
       },
       error: (reject) => {
         const snackBarRef = this._snackBar.open(`Erro  ${reject.error}` , '', {
@@ -65,10 +72,6 @@ export class LoginComponent extends BaseComponentFormComponent{
         setTimeout(() => {
           snackBarRef.dismiss();
         }, 2000);
-
-        this.cookieService.setCookie('error',reject.error,7);
-
-
       }
     })
   }
