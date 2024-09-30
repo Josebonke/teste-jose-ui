@@ -31,3 +31,4 @@ e o usuário é redirecionado para Home page
 ## Tela Home Page
 A tela Home Page é bem simples é contem o nome do usuário que é derivado do cookie e um botão para logout
 
+- Por questão de padronização,  o frontend e o back foram separados assim o o projeto fica mais legivél 
