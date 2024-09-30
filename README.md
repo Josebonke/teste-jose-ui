@@ -1,27 +1,33 @@
 # TesteJoseUi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+Projeto Criado em Angular version 18.2.1.
 
-## Development server
+## Tecnologias Usadas
+1° Angular foi minha primeira decisão para o desenvolvimento do front-end pela facilidade, e a estrutura do código
+2° Material Design components foi escolhido  pela gama de compoenentes e o angular se adapta muito bem.
+3° Para o Css escolhi  o LESS pois o mesmo ajuda muito na organização do código
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Rodar Projeto front end
+-- no Terminal do Visual Studio Code Rode `ng serve -- open` para abir o navegador automaticamente.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Decisão do Design tela Login
+o DEsgin foi deito dessa maneira pensando na simpicidade e  essencial   a tela responsiva onde mobiles tem o logo em cima e o form abaixo se adaptando a tela
 
-## Build
+## Códgio Css
+foi usado media querie para identificar o tamanho da tela, e para fazer a responsividade usei a ferrament display grid e display flex;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+o projeto consiste em 2 tela de Login onde tem um formulario com dois input-text e um botão 
+inputs de email e senha e um botão de logar
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tela Login
+na tela de login  o usúario pode preencher o campo de email e senha e clicar em logar caso o usuário ou senha inválido aparece uma mensagem avisando.
 
-## Running end-to-end tests
+Caso o usuário seja logado é criado um cookie contendo um token
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+e o usuário é redirecionado para Home page
 
-## Further help
+## Tela Home Page
+A tela Home Page é bem simples é contem o nome do usuário que é derivado do cookie e um botão para logout
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
